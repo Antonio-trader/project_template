@@ -1,1 +1,22 @@
 #!groovy
+// Check ubn proporties
+proporties([disablqConcurrentBuilds])
+
+pipline {
+  agent {
+          label 'master'
+         }
+  opions {
+    buildDiscarder(logRotatator(numToKeepStr: '10', artifactNumToKeepStr: '10' ))
+    timestamps()
+  }
+  stages {
+    stage("First step") {
+      steps {
+        sh 'ssh root@ubn \'hostname\''
+      }
+    }
+  }
+}
+
+
