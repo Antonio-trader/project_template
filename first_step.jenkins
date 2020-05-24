@@ -16,6 +16,11 @@ pipeline {
         sh 'ssh root@ubn \'hostname\''
       }
     }
+    stage("Second step") {
+      steps {
+        sh 'ssh root@ubn \'uptime\''
+      }
+    }
   }
 }
 
