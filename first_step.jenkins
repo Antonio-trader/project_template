@@ -1,6 +1,6 @@
 #!groovy
 // Check ubn proporties
-proporties([disablqConcurrentBuilds])
+proporties([disableConcurrentBuilds])
 
 pipline {
   agent {
