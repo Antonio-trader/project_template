@@ -1,13 +1,13 @@
 #!groovy
 // Check ubn proporties
-proporties([disableConcurrentBuilds()])
+properties([disableConcurrentBuilds()])
 
-pipline {
+pipeline {
   agent {
           label 'master'
          }
-  opions {
-    buildDiscarder(logRotatator(numToKeepStr: '10', artifactNumToKeepStr: '10' ))
+  options {
+    buildDiscarder(logRotator(numToKeepStr: '10', artifactNumToKeepStr: '10' ))
     timestamps()
   }
   stages {
